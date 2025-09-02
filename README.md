@@ -1,1 +1,1 @@
-# AndroidAppTemplateCRPG
+# AndroidAppTemplateCRPG[app](app)
