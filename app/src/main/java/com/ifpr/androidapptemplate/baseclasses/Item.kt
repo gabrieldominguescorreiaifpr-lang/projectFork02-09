@@ -1,7 +1,9 @@
 package com.ifpr.androidapptemplate.baseclasses
 
 data class Item(
-    var endereco: String? = null,
+    var nome: String? = null,
+    var tema: String? = null,
+    var estilo: String? = null,
     val base64Image: String? = null,
     val imageUrl: String? = null
 )

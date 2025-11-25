@@ -19,7 +19,6 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.StorageReference
 import com.ifpr.androidapptemplate.R
 import com.ifpr.androidapptemplate.baseclasses.Item
 import com.ifpr.androidapptemplate.databinding.FragmentDashboardBinding
@@ -29,7 +28,9 @@ class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
 
-    private lateinit var enderecoEditText: EditText
+    private lateinit var nomeMusicaEditText: EditText
+    private lateinit var temaMusicaEditText: EditText
+    private lateinit var estiloMusicaEditText: EditText
     private lateinit var itemImageView: ImageView
     private var imageUri: Uri? = null
 
@@ -65,7 +66,10 @@ class DashboardFragment : Fragment() {
         itemImageView = view.findViewById(R.id.image_item)
         salvarButton = view.findViewById(R.id.salvarItemButton)
         selectImageButton = view.findViewById(R.id.button_select_image)
-        enderecoEditText = view.findViewById(R.id.enderecoItemEditText)
+        nomeMusicaEditText = view.findViewById(R.id.nomeMusicaEditText)
+        temaMusicaEditText = view.findViewById(R.id.nomeMusicaEditText)
+        estiloMusicaEditText = view.findViewById(R.id.nomeMusicaEditText)
+
         //TODO("Capture aqui os outro campos que foram inseridos no layout. Por exemplo, ate
         // o momento so foi capturado o endereco (EditText)")
 
@@ -96,9 +100,11 @@ class DashboardFragment : Fragment() {
 
     private fun salvarItem() {
         //TODO("Capture aqui o conteudo que esta nos outros editTexts que foram criados")
-        val endereco = enderecoEditText.text.toString().trim()
+        val nomeMusica = nomeMusicaEditText.text.toString().trim()
+        val temaMusica = nomeMusicaEditText.text.toString().trim()
+        val estiloMusica = nomeMusicaEditText.text.toString().trim()
 
-        if (endereco.isEmpty() || imageUri == null) {
+        if (nomeMusica.isEmpty() || temaMusica.isEmpty() || estiloMusica.isEmpty() || imageUri == null) {
             Toast.makeText(context, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT)
                 .show()
             return
@@ -115,10 +121,12 @@ class DashboardFragment : Fragment() {
 
             if (bytes != null) {
                 val base64Image = Base64.encodeToString(bytes, Base64.DEFAULT)
-                val endereco = enderecoEditText.text.toString().trim()
+                val nomeMusica = nomeMusicaEditText.text.toString().trim()
+                val temaMusica = temaMusicaEditText.text.toString().trim()
+                val estiloMusica = estiloMusicaEditText.text.toString().trim()
                 //TODO("Capture aqui o conteudo que esta nos outros editTexts que foram criados")
 
-                val item = Item(endereco, base64Image)
+                val item = Item(nomeMusica, temaMusica, estiloMusica, base64Image)
 
                 saveItemIntoDatabase(item)
             }

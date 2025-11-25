@@ -13,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:text="Cadastro de musicas patriotas"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="Cadastro de ..."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,24 +45,50 @@
 
 
     <EditText
-        android:id="@+id/enderecoItemEditText"
+        android:id="@+id/nomeMusicaEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Endereço"
         android:height="48dp"
+        android:hint="Nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_select_image" />
 
 
+    <EditText
+        android:id="@+id/temaMusicaEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:height="48dp"
+        android:hint="Tema"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_select_image" />
+
+    <EditText
+        android:id="@+id/estiloMusicaEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:height="48dp"
+        android:hint="Estilo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_select_image" />
+
     <Button
         android:id="@+id/salvarItemButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
         android:text="Salvar"
-        app:layout_constraintTop_toBottomOf="@id/enderecoItemEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/nomeMusicaEditText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
